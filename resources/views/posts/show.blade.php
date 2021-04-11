@@ -1,9 +1,9 @@
 <x-app-layout>
 
-    <div class="container py-8">
-        <h1 class="text-4xl font-bold text-gray-600">{{$post->name}}</h1>
+    <div class="container py-8 bg-gray-200 rounded-lg shadow-lg">
+        <h1 class="text-4xl font-bold text-black">{{$post->name}}</h1>
 
-        <div class="text-lg text-gray-500 mb-2">
+        <div class="text-lg text-black mb-2">
             {!!$post->extract!!}
         </div>
 
@@ -13,16 +13,38 @@
             <div class="col-span-2">
                 <figure>
                     @if ($post->image)
-                        <img class="w-full h-80 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="">
+                        <img class="w-full h-80 object-auto object-center" src="{{Storage::url($post->image->url)}}" alt="">
                     @else
-                        <img class="w-full h-72 object-cover object-center"src="https://cdn.pixabay.com/photo/2018/04/29/23/01/tree-3361331_960_720.jpg" alt="">
+                        <img class="w-full h-72 object-auto object-center"src="{{Storage::url('Default.jpg')}}" alt="">
 
                     @endif
                 </figure>
 
-                <div class="text-base text-gray-500 mt-4">
+                <div class="text-base text-black mt-4">
                     {!!$post->body!!}
                 </div>
+
+                @isset($post->video->url)
+                <video id="Video" src="{{Storage::url($post->video->url)}}" width="640" height="480" controls>
+                    <source src="{{Storage::url($post->video->url)}}">
+                </video>
+                @endif
+
+                @isset($post->video->youtube_link)
+
+                    @php $link= str_replace("watch?v=", "embed/", $post->video->youtube_link); @endphp
+                    <iframe width="560" height="315" src="{{$link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                @endif
+
+                @isset($post->audio)
+
+                <h6>{{$post->audio->name}}</h6>
+                <audio id="Audio" src="{{Storage::url($post->audio->url)}}" controls>
+                    
+                </audio>
+                
+                @endif
             </div>
 
             {{-- Contenido relacionado  --}}
@@ -33,10 +55,10 @@
                         <li class="mb-4">
                             <a class="flex" href="{{route('posts.show', $similar)}}">
                                 @if ($similar->image)
-                                    <img class="w-36 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                    <img class="w-36 h-20 object-auto object-center" src="{{Storage::url($similar->image->url)}}" alt="">
 
                                 @else
-                                    <img class="w-36 h-20 object-cover object-center"src="https://cdn.pixabay.com/photo/2018/04/29/23/01/tree-3361331_960_720.jpg" alt="">
+                                    <img class="w-36 h-20 object-auto object-center"src="{{Storage::url('Default.jpg')}}" alt="">
                                 @endif
                             <span class="ml-2 text-gray-600">{{$similar->name}}</span>
                         </a>

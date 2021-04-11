@@ -7,7 +7,7 @@
     @can('admin.tags.create')
         <a class="btn btn-success btn-sm float-right" href="{{route('admin.tags.create')}}">Nueva etiqueta</a>
     @endcan
-    <h1>Mostrar Listado de Etiquetas</h1>
+    <h1 class="text-center"> Lista de Etiquetas</h1>
 @stop
 
 @section('content')
@@ -17,12 +17,13 @@
         </div>
     @endif
 
-    <div class="card">
+<div class="img-fluid h-100 w-100" style="min-height:550px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:cover; background-repeat:repeat-y;">
+
+    <div class="card w-50 mx-auto">
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nombre</th>
                         <th colspan="2" class="text-center">Opciones</th>
                     </tr>
@@ -31,7 +32,6 @@
                 <tbody>
                     @foreach ($tags as $tag)
                         <tr>
-                            <td>{{$tag->id}}</td>
                             <td>{{$tag->name}}</td>
                             <td width="10px">
                                 @can('admin.tags.edit', Model::class)
@@ -53,5 +53,6 @@
             </table>
         </div>
     </div>
+</div>
 @stop
 

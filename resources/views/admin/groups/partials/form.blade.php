@@ -29,7 +29,7 @@
 
     <div class="form-group">
         {!! Form::label('assistant', 'Asistente:') !!}
-        {!! Form::text('assistant', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del Asistente']) !!}
+        {!! Form::text('assistant', null, ['class' => 'form-control ', 'placeholder' => 'Ingrese el nombre del Asistente']) !!}
     
         @error('assistant')
            <small class="text-danger">{{$message}}</small>
@@ -38,7 +38,7 @@
 
     <div class="form-group">
         {!! Form::label('master', 'Maestro de niños:') !!}
-        {!! Form::text('master', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del Maestro de Niños del Grupo Bíblico.']) !!}
+        {!! Form::text('master', null, ['class' => 'form-control ', 'placeholder' => 'Ingrese el nombre del Maestro de Niños del Grupo Bíblico.']) !!}
     
         @error('master')
            <small class="text-danger">{{$message}}</small>
@@ -47,7 +47,7 @@
 
     <div class="form-group">
         {!! Form::label('host', 'Anfitrión:') !!}
-        {!! Form::text('host', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del Anfitrión del Grupo Bíblico.']) !!}
+        {!! Form::text('host', null, ['class' => 'form-control ', 'placeholder' => 'Ingrese el nombre del Anfitrión del Grupo Bíblico.']) !!}
     
         @error('host')
            <small class="text-danger">{{$message}}</small>
@@ -56,7 +56,7 @@
 
     <div class="form-group">
         {!! Form::label('code', 'Código:') !!}
-        {!! Form::text('code', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el código del Grupo Bíblico.']) !!}
+        {!! Form::text('code', null, ['class' => 'form-control ', 'placeholder' => 'Ingrese el código del Grupo Bíblico.']) !!}
     
         @error('host')
            <small class="text-danger">{{$message}}</small>

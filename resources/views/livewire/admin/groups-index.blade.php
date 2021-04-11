@@ -1,4 +1,6 @@
-<div class="card">
+<div class="img-fluid h-100 w-100" style="min-height:550px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:cover; background-repeat:repeat-y;">
+
+<div class="card w-50 mx-auto">
 
 
 
@@ -8,11 +10,11 @@
 
     @if ($groups->count())
         
-        <div class="card-body">
+        <div class="card-body" style="background:white;">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        
                         <th>Nombre</th>
                         <th colspan="2" class="text-center">Opciones</th>
                     </tr>
@@ -21,7 +23,7 @@
                 <tbody>
                     @foreach ($groups as $group)
                         <tr>
-                            <td>{{$group->id}}</td>
+                            
                             <td>{{$group->name}}</td>
                             <td width="10px">
                                 <a class="btn btn-primary btn-sm" href="{{route('admin.groups.edit', $group)}}">Editar</a>
@@ -46,4 +48,5 @@
     @else 
         <strong class="card-body text-center">No hay ningún registro</strong>
     @endif
+</div>
 </div>

@@ -3,38 +3,41 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Crear nueva categoría</h1>
+    <h1 class="text-center">Crear nueva categoría</h1>
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            {!! Form::open(['route' => 'admin.categories.store']) !!}
+    <div class="img-fluid h-100 w-100" style="min-height:550px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:cover; background-repeat:repeat-y;">
 
-                <div class="form-group">
-                    {!! Form::label('name', 'Nombre') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoría']) !!}
+        <div class="card w-50 mx-auto ">
+            <div class="card-body" >
+                {!! Form::open(['route' => 'admin.categories.store']) !!}
 
-                    @error('name')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
+                    <div class="form-group">
+                        {!! Form::label('name', 'Nombre') !!}
+                        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoría']) !!}
 
-                </div>
+                        @error('name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
 
-                <div class="form-group">
-                    {!! Form::label('slug', 'Slug') !!}
-                    {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el slug de la categoría', 'readonly']) !!}
+                    </div>
 
-                    @error('slug')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
-                </div>
+                    <div class="form-group">
+                        {!! Form::label('slug', 'Slug') !!}
+                        {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el slug de la categoría', 'readonly']) !!}
 
-                {!! Form::submit('Crear categoría', ['class' => 'btn btn-primary']) !!}
+                        @error('slug')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
 
-            {!! Form::close() !!}
+                    {!! Form::submit('Crear categoría', ['class' => 'btn btn-success float-right']) !!}
+
+                {!! Form::close() !!}
+            </div>
         </div>
-    </div>
+</div>
 @stop
 
 @section('js')

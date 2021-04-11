@@ -3,10 +3,11 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Editar Grupos Bíblicos</h1>
+    <h1>Reporte de grupo bíblico.</h1>
 @stop
 
 @section('content')
+<div class="img-fluid" style="height:2200px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:contain; background-repeat:repeat-y;">
 
     @if (session('info'))
         <div class="alert alert-success">
@@ -14,7 +15,7 @@
         </div>
     @endif
 
-<div class="card">
+<div class="card w-50 mx-auto">
     <div class="card-body">
         {!! Form::model($report,['route' => ['admin.reports.update', $report ], 'method' => 'put']) !!}
 
@@ -246,11 +247,12 @@
             @enderror
         </div>
         
-            <a class="btn btn-success btn-sm" href="{{route('admin.reports.index')}}">Regresar</a>
+            <a class="btn btn-success btn-sm float-right" href="{{route('admin.reports.index')}}">Regresar</a>
 
 
         {!! Form::close() !!}
     </div>
+</div>
 </div>
 @stop
 

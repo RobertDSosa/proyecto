@@ -1,11 +1,18 @@
 <x-jet-action-section>
+
+    <div class="bg-gray-100">
+
+    
     <x-slot name="title">
-        Eliminar cuenta
+        <p class="text-white"> Eliminar cuenta </p>
     </x-slot>
 
     <x-slot name="description">
-        Aquí puedes eliminar permanentemente tu cuenta.
+        <p class="text-gray-300">Aquí puedes eliminar permanentemente tu cuenta.</p>
+
     </x-slot>
+
+</div>
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600">

@@ -3,7 +3,7 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Asignar un rol</h1>
+    <h1 class="text-center">Asignar un rol</h1>
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <div class="card">
+    <div class="card w-50 mx-auto">
         <div class="card-body">
             <p class="h5">Nombre:</p>
             <p class="form-control">{{$user->name}}</p>
@@ -23,14 +23,17 @@
             {!! Form::model($user, ['route' => ['admin.users.update', $user], 'method' => 'put']) !!}
 
                 @foreach ($roles as $role)
-                    <div>
-                        <label for="">
-                            {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
-                            {{$role->name }}
-                        </label>
+                    <div class="form-group">
+                        <p>
+                            <label for="" >
+                                {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
+                                {{$role->name }}
+                            </label>
+                        </p>
+                        
                     </div>
                 @endforeach
-                {!! Form::submit('Asignar Rol', ['class' => 'btn btn-primary mt-2']) !!}
+                {!! Form::submit('Asignar Rol', ['class' => 'btn btn-success mt-2 float-right']) !!}
             {!! Form::close() !!}
         </div>
     </div>

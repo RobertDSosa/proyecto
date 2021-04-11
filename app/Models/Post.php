@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Video;
+use App\Models\Audio;
 
 class Post extends Model
 {
@@ -33,5 +35,17 @@ class Post extends Model
 
     public function image(){
         return $this->morphOne(image::class, 'imageable');
+    }
+
+    public function video(){
+        return $this->morphOne(Video::class, 'videoable');
+    }
+
+    public function audio(){
+        return $this->morphOne(Audio::class, 'audioable');
+    }
+
+    public function file(){
+        return $this->morphOne(File::class, 'fileable');
     }
 }

@@ -3,7 +3,7 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Editar Grupos Bíblicos</h1>
+    <h1 class="text-center">Editar Grupos Bíblicos</h1>
 @stop
 
 @section('content')
@@ -13,8 +13,9 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
+<div class="img-fluid h-100 w-100" style="min-height:550px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:cover; background-repeat:repeat-y;">
 
-<div class="card">
+<div class="card w-50 mx-auto">
     <div class="card-body">
         {!! Form::model($group,['route' => ['admin.groups.update', $group ], 'method' => 'put']) !!}
 
@@ -86,6 +87,7 @@
 
         {!! Form::close() !!}
     </div>
+</div>
 </div>
 @stop
 

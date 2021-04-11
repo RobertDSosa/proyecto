@@ -1,14 +1,14 @@
 <div class="form-group">
-    {!! Form::label('group_id', 'Grupo Bíblico:') !!}
-    {!! Form::select('group_id', $groups, null, ['class' => 'form-control ']) !!}
+    {!! Form::label('group_id', 'Grupo Bíblico:', ['class' => '']) !!} <br>
+    {!! Form::select('group_id', $groups, null, ['class' => 'form-control  ']) !!}
     @error('group_id')
        <small class="text-danger">{{$message}}</small>
     @enderror
 </div>
 
 <div class="form-group">
-    {!! Form::label('fecha', 'Fecha:') !!}
-    {!! Form::date('fecha', null, ['class' => 'form-control ']) !!}
+    {!! Form::label('fecha', 'Fecha:', ['class' => '']) !!}
+    {!! Form::date('fecha', null, ['class' => 'form-control ', 'placeholder' => 'Ingrese la fecha']) !!}
     @error('fecha')
        <small class="text-danger">{{$message}}</small>
     @enderror
@@ -25,8 +25,8 @@
 </div> --}}
 
 
-<div class="form-group">
-    {!! Form::label('felipes', 'Felipes:' ) !!}
+<div class="form-group ">
+    {!! Form::label('felipes', 'Felipes:' , ['class' => '']) !!} <br>
     {!! Form::text('felipes', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el número de Felipes.']) !!}
 
 

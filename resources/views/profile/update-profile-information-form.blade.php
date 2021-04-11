@@ -1,10 +1,10 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        Información del perfil
+        <p class="text-black">Información del perfil</p>
     </x-slot>
 
     <x-slot name="description">
-        Aquí puedes modificar la información de tu perfil.
+        <p class="text-gray-700">Aquí puedes modificar la información de tu perfil.</p>
     </x-slot>
 
     <x-slot name="form">

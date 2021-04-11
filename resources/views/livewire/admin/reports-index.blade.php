@@ -1,15 +1,16 @@
-<div>
-    <div class="card-header">
+<div class="img-fluid" style="height:520px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:cover; background-repeat:repeat-y;">
+    <div>
+    <div class="card-header" >
         <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
     </div>
 
     @if ($reports->count())
         
-        <div class="card-body">
+        <div class="card-body" style="background:white;">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        
                         <th>Fecha</th>
                         <th>Grupo Bíblico</th>
                         <th colspan="3" class="text-center">Opciones</th>
@@ -20,7 +21,7 @@
                     @foreach ($reports as $report)
                         <tr>
                             
-                            <td>{{$report->id}}</td>
+                            
                             <td>{{$report->fecha}}</td>
                             <td>{{$report->group->name}}</td>
                             <td width="10px">
@@ -49,6 +50,7 @@
         <div class="card-footer">
             {{$reports->links()}}
         </div>
+    </div>
     @else 
         <strong class="card-body text-center">No hay ningún registro</strong>
     @endif

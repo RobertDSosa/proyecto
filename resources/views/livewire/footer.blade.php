@@ -26,13 +26,26 @@
             </div> --}}
         </div>
         <div class=" mx-auto w-full  bg-green-800">
+
             <div class=" border-t-2 border-green-800 flex flex-col items-center">
-                <div class="sm:w-2/3 text-center py-6">
-                    <p class="text-sm text-white font-bold mb-2">
-                        © 2021 Robert Sosa
-                    </p>
+                <div class="grid grid-cols-2 w-full "> 
+                    <div class=" text-center pt-6 object-center mx-auto col col-span-1">
+                        <p class="text-base text-white font-bold mb-2">¡Conéctate con nosotros!</p><br>
+                        <span class="text-sm text-white ">Escribenos a:</span><br>
+                        <a href="mailto:cc_margarita@hotmail.com" class="text-sm text-white font-bold mb-4 ">cc_margarita@hotmail.com</a>
+
+                    </div>
+                    <div class=" text-center pt-6 object center mx-auto col col-span-1">
+                        <p class="text-sm text-white font-bold mb-2"> © 2021 Centro Cristiano Renuevo de Margarita</p>
+                        <p class="text-sm text-white font-bold mb-2">Calle Marcano, entre Narváez y Amador Hernández. </p>
+                        <p class="text-sm text-white font-bold mb-2">Porlamar, estado Nueva Esparta. Venezuela.</p>
+                        <p class="text-sm text-white font-bold mb-4">Teléfono: (0295)-266-1096</p>
+                    </div>
                 </div>
+                
+                  
             </div>
+            
         </div>
     </footer>
 </div>

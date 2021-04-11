@@ -3,19 +3,25 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Realizar un Reporte</h1>
+    <div class="text-center">
+        <h1>Realizar un Reporte</h1>
+    </div>
+    
 @stop
 
 @section('content')
-    <div class="card">
+<div class="img-fluid" style="height:2200px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:contain; background-repeat:repeat-y;">
+
+    <div class="card w-50 mx-auto">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.reports.store', 'autocomplete' => 'off', 'files'=> true]) !!}
 
                 @include('admin.reports.partials.form')
-                {!! Form::submit('Crear Reporte', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Crear Reporte', ['class' => 'btn btn-success float-right']) !!}
             {!! Form::close() !!}
         </div>
     </div>
+</div>
 @stop
 
 @section('css')

@@ -36,7 +36,7 @@ class CreateReportsTable extends Migration
             $table->integer('reconciliaciones')->nullable();
             $table->integer('liderazgo')->nullable();
             $table->text('observaciones')->nullable();
-            $table->date('fecha');
+            $table->date('fecha')->nullable();
 
             $table->unsignedBigInteger('group_id')->nullable();
 

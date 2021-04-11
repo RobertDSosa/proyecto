@@ -7,12 +7,12 @@
         ],
         [
             'name' => '¿Quiénes Somos?',
-            'route' => route('posts.index'),
-            'active' => false
+            'route' => route('quienes-somos.index'),
+            'active' => request()->routeIs('quienes-somos.index')
         ],
         [
-            'name' => 'Contáctanos',
-            'route' => route('posts.index'),
+            'name' => 'Eventos',
+            'route' => route('calendario'),
             'active' => false
         ],
         
@@ -138,9 +138,13 @@
                                     Perfil
                                 </x-jet-dropdown-link>
 
+                                @can('admin.home')
                                 <x-jet-dropdown-link href="{{ route('admin.home') }}">
-                                  Panel Administrativo
-                                </x-jet-dropdown-link>
+                                    Panel Administrativo
+                                  </x-jet-dropdown-link>
+                                @endcan
+
+                                
 
                                 <div class="border-t border-gray-100"></div>
 

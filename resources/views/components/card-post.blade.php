@@ -5,7 +5,7 @@
         <img class="w-full h-72 object-cover object-center"src="{{Storage::url($post->image->url)}}" alt="">
 
     @else
-    <img class="w-full h-72 object-cover object-center"src="https://cdn.pixabay.com/photo/2018/04/29/23/01/tree-3361331_960_720.jpg" alt="">
+    <img class="w-full h-72 object-auto object-center"src="{{Storage::url('Default.jpg')}}" alt="">
     @endif
 
     <div class="px-6 py-4">

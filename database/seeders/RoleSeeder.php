@@ -48,6 +48,17 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.posts.edit'])->syncRoles([$role1, $role2, $role3, $role6]);
         Permission::create(['name' => 'admin.posts.delete'])->syncRoles([$role1, $role2, $role3, $role6]);
 
+        Permission::create(['name' => 'admin.groups.index'])->syncRoles([$role1, $role2, $role3, $role4]);
+        Permission::create(['name' => 'admin.groups.create'])->syncRoles([$role1, $role2, $role3, $role4]);
+        Permission::create(['name' => 'admin.groups.edit'])->syncRoles([$role1, $role2, $role3, $role4]);
+        Permission::create(['name' => 'admin.groups.delete'])->syncRoles([$role1, $role2, $role3, $role4]);
+
+        Permission::create(['name' => 'admin.reports.index'])->syncRoles([$role1, $role2, $role3, $role4]);
+        Permission::create(['name' => 'admin.reports.create'])->syncRoles([$role1, $role2, $role3, $role4]);
+        Permission::create(['name' => 'admin.reports.edit'])->syncRoles([$role1, $role2, $role3, $role4]);
+        Permission::create(['name' => 'admin.reports.delete'])->syncRoles([$role1, $role2, $role3, $role4]);
+
+
 
 
     }

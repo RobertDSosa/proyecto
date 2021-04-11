@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Renuevo de</b>Margarita',
+    'logo' => 'Renuevo de Margarita',
     'logo_img' => 'vendor/adminlte/dist/img/logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -123,7 +123,7 @@ return [
     'classes_body' => '',
     'classes_brand' => 'bg-green-800',
     'classes_brand_text' => '',
-    'classes_content_wrapper' => '',
+    'classes_content_wrapper' => 'content-wrapper',
     'classes_content_header' => '',
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-success elevation-4',
@@ -246,7 +246,8 @@ return [
             'text'        => 'Usuarios',
             'route'         => 'admin.users.index',
             'icon'        => 'fas fa-users fa-fw',
-            // 'can'         => 'admin.user.index'
+            'active'     => ['admin/users*'],
+            'can'         => 'admin.users.index'
             
         ],
         
@@ -255,14 +256,14 @@ return [
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
             'active' => ['admin/categories*'],
-            // 'can'         => 'admin.categories.index'
+            'can'         => 'admin.categories.index'
         ],
         [
             'text' => 'Etiquetas',
             'route'  => 'admin.tags.index',
             'icon' => 'far fa-fw fa-bookmark',
             'active' => ['admin/tags*'],
-            // 'can'         => 'admin.tags.index'
+            'can'         => 'admin.tags.index'
         ],
         
         ['header' => 'OPCIONES DE CONTENIDO'],
@@ -270,13 +271,15 @@ return [
             'text'       => 'Lista de Posts',
             'route'        => 'admin.posts.index',
             'icon'      =>'fas fa-fw fa-clipboard',
-            // 'can'         => 'admin.posts.index'
+            'active'    => ['admin/posts/index'],
+            'can'         => 'admin.posts.index'
         ],
         [
             'text'       => 'Crear nuevo Post',
             'route'        => 'admin.posts.create',
             'icon'      =>'fas fa-fw fa-file',
-            // 'can'         => 'admin.posts.create'
+            'active'    => ['admin/posts/create'],
+            'can'         => 'admin.posts.create'
         ],
         
         ['header' => 'OPCIONES DE GRUPOS BÍBLICOS'],
@@ -284,11 +287,17 @@ return [
             'text'       => 'Lista de Grupos Bíblicos',
             'route'        => 'admin.groups.index',
             'icon'      =>'fas fa-fw fa-clipboard',
+            'active'    => ['admin/groups/index'],
+            'can'       => 'admin.groups/index'
+
         ],
         [
             'text'       => 'Crear nuevo Grupo Bíblico',
             'route'        => 'admin.groups.create',
             'icon'      =>'fas fa-fw fa-file',
+            'active'    => ['admin/groups/create'],
+            'can'       => 'admin.groups.create'
+
         ],
 
         ['header' => 'REPORTES DE GRUPOS BÍBLICOS'],
@@ -296,11 +305,17 @@ return [
             'text'       => 'Lista de Reportes de Grupos Bíblicos',
             'route'        => 'admin.reports.index',
             'icon'      =>'fas fa-fw fa-clipboard',
+            'active'    => ['admin/reports/index'],
+            'can'       => 'admin.reports.index'
+
         ],
         [
             'text'       => 'Crear nuevo Reporte',
             'route'        => 'admin.reports.create',
             'icon'      =>'fas fa-fw fa-file',
+            'active'    => ['admin/reports/create'],
+            'can'       => 'admin.reports.create'
+
         ],
     ],
 

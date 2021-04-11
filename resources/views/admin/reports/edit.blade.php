@@ -13,8 +13,9 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
+<div class="img-fluid" style="height:2200px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:contain; background-repeat:repeat-y;">
 
-<div class="card">
+<div class="card w-50 mx-auto">
     <div class="card-body">
         {!! Form::model($report,['route' => ['admin.reports.update', $report ], 'method' => 'put']) !!}
 
@@ -253,6 +254,7 @@
 
         {!! Form::close() !!}
     </div>
+</div>
 </div>
 @stop
 

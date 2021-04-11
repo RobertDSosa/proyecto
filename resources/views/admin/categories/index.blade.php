@@ -7,7 +7,7 @@
         <a href="{{route('admin.categories.create')}}" class="btn btn-success btn-sm float-right"> Agregar categoría</a>
 
     @endcan
-    <h1>Lista de categorías</h1>
+    <h1 class="text-center">Lista de categorías</h1>
 @stop
 
 @section('content')
@@ -18,15 +18,16 @@
         </div>
     @endif
 
+    <div class="img-fluid h-100 w-100" style="min-height:550px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:cover; background-repeat:repeat-y;">
 
-    <div class="card">
+    <div class="card w-50 mx-auto my-auto">
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
 
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
+
+                        <th>Nombre</th>
                         <th colspan="2" class="text-center">Opciones</th>
                     </tr>
         
@@ -35,7 +36,7 @@
                 <tbody>
                     @foreach ($categories as $category)
                         <tr>
-                            <td>{{$category->id}}</td>
+                            
                             <td>{{$category->name}}</td>
                             <td width="10px"> 
                                 @can('admin.categories.edit')
@@ -56,6 +57,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 @stop
 

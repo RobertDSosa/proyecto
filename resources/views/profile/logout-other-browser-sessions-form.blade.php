@@ -1,10 +1,10 @@
 <x-jet-action-section>
     <x-slot name="title">
-        Sesiones iniciadas
+        <p class="text-white">Sesiones iniciadas</p>
     </x-slot>
 
     <x-slot name="description">
-        Administra o cierra sesiones activas en otros dispositivos o navegadores.
+        <p class="text-gray-300">Administra o cierra sesiones activas en otros dispositivos o navegadores.</p>
     </x-slot>
 
     <x-slot name="content">

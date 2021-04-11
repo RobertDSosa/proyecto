@@ -26,7 +26,7 @@
     </select> --}}
 
     {!! Form::label('color', 'Color:') !!}
-    {!! Form::select('color', $colors, null, ['class' => 'form-control']) !!}
+    {!! Form::select('color', $colors, null, ['class' => 'form-control col-4']) !!}
 
 </div>
 

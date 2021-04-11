@@ -1,10 +1,10 @@
 <x-jet-action-section>
     <x-slot name="title">
-        Autenticación de en dos pasos
+        <p class="text-white">Autenticación de en dos pasos</p>
     </x-slot>
 
     <x-slot name="description">
-        Con la autenticación en dos pasos, puedes añadir otra capa de seguridad a tu cuenta.
+        <p class="text-gray-300">Con la autenticación en dos pasos, puedes añadir otra capa de seguridad a tu cuenta.</p>
     </x-slot>
 
     <x-slot name="content">

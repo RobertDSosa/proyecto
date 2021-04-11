@@ -37,19 +37,46 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         
+        
         $post = Post::create($request->all());
 
         if($request->file('file')){
-            $url = Storage::put('posts', $request->file('file'));
+          $url = Storage::put('posts', $request->file('file'));
 
-            $post->image()->create([
-                'url' => $url
+           $post->image()->create([
+              'url' => $url
+           ]);
+        }
+
+        if($request->file('video')){
+            $url2 = Storage::put('posts', $request->file('video'));
+            $video_name = $request->video_name;
+            $post->video()->create([
+                'url' => $url2,
+                'name' => $video_name
+            ]);
+        }
+
+        if($request->file('audio')){
+            $url3 = Storage::put('posts', $request->file('audio'));
+            $audio_name= $request->audio_name;
+            $post->audio()->create([
+                'url' => $url3,
+                'name' => $audio_name
+            ]);
+        }
+        if($request->youtube_link){
+            $youtube_link= $request->youtube_link;
+            $post->video()->create([
+                'youtube_link' => $youtube_link
             ]);
         }
 
         if($request->tags){
-            $post->tags()->attach($request->tags);
+           $post->tags()->attach($request->tags);
         }
+
+    
 
         return redirect()->route('admin.posts.edit', $post);
     }
@@ -83,10 +110,65 @@ class PostController extends Controller
                 ]);
             }
         }
+
+        if($request->file('video')){
+            $url2 = Storage::put('posts', $request->file('video'));
+            $video_name = $request->video_name;
+            var_dump($url2);
+            var_dump($video_name);
+
+            if($post->video->url){
+                Storage::delete($post->video->url);
+
+                $post->video->update([
+                    'url' => $url2,
+                    'name' => $video_name
+                ]);
+            }else{
+                $post->video()->create([
+                    'url' => $url2,
+                    'name' => $video_name
+                ]);
+            }
+        }
+            if($request->file('audio')){
+                $url3 = Storage::put('posts', $request->file('audio'));
+                $audio_name = $request->audio_name;
+                var_dump($url3);
+                var_dump($audio_name);
+    
+                if($post->audio){
+                    Storage::delete($post->audio->url);
+    
+                    $post->audio->update([
+                        'url' => $url3,
+                        'name' => $audio_name
+                    ]);
+                }else{
+                    $post->audio()->create([
+                        'url' => $url3,
+                        'name' => $audio_name
+                    ]);
+                }
+            }
+            if($request->youtube_link){
+                $youtube_link = $request->youtube_link;
+
+                if($post->video->youtube_link){
+                    $post->video->update([
+                        'youtube_link' => $youtube_link
+                    ]);
+                }else{
+                    $post->video()->create([
+                        'youtube_link' => $youtube_link
+                    ]);
+                }
+            }
+
         if($request->tags){
             $post->tags()->sync($request->tags);
         }
-
+        
         return redirect()->route('admin.posts.edit', $post)->with('info', 'El post se actualizó con éxito');
     }
 

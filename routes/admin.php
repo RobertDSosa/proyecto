@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Exports\ReportsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home')->name('admin.home');
@@ -24,4 +26,9 @@ Route::resource('groups', GroupController::class)->except('show')->names('admin.
 
 Route::get('reports/make-report', [ReportController::class, 'makeReport'])->name('admin.reports.make-report');
 
+Route::get('reports/make-excel', [ReportController::class, 'makeExcel'])->name('admin.reports.make-excel');
+
+Route::get('download-pdf', [ReportController::class, 'downloadPDF'])->name('admin.reports.download-pdf');
+
 Route::resource('reports', ReportController::class )->names('admin.reports');
+

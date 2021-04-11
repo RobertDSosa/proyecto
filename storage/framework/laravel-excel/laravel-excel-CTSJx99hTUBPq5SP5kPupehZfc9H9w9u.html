@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="zW9CSuDCS7cMDZLx4aJYKi8TuCUIO6xiJSboHSl2">
+
+    
+    
+    
+    <title>
+        Plan Felipe |         Panel administrativo            </title>
+
+    
+    
+    
+            <link rel="stylesheet" href="http://proyecto.test/vendor/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="http://proyecto.test/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+        
+        
+        <link rel="stylesheet" href="http://proyecto.test/vendor/adminlte/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    
+    
+                        <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+            
+    
+                <link rel="stylesheet" href="/css/admin_custom.css">
+
+    
+    
+</head>
+
+<body class="layout-fixed layout-footer-fixed sidebar-mini" >
+
+    
+        <div class="wrapper">
+
+        
+                    <nav class="main-header navbar
+    navbar-expand
+    navbar-white navbar-light">
+
+    
+    <ul class="navbar-nav">
+        
+        <li class="nav-item">
+    <a class="nav-link" data-widget="pushmenu" href="#"
+                        >
+        <i class="fas fa-bars"></i>
+        <span class="sr-only">Alternar barra de navegación</span>
+    </a>
+</li>
+        
+        
+        
+            </ul>
+
+    
+    <ul class="navbar-nav ml-auto">
+        
+        
+        
+        
+        
+                                    <li class="nav-item dropdown user-menu">
+
+    
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <span >
+            Robert Sosa
+        </span>
+    </a>
+
+    
+    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+        
+                            
+        
+        
+        
+        
+        
+        <li class="user-footer">
+                        <a class="btn btn-default btn-flat float-right  btn-block "
+               href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fa fa-fw fa-power-off"></i>
+                Salir
+            </a>
+            <form id="logout-form" action="http://proyecto.test/logout" method="POST" style="display: none;">
+                                <input type="hidden" name="_token" value="zW9CSuDCS7cMDZLx4aJYKi8TuCUIO6xiJSboHSl2">
+            </form>
+        </li>
+
+    </ul>
+
+</li>
+                    
+        
+            </ul>
+
+</nav>
+        
+        
+                    <aside class="main-sidebar sidebar-dark-success elevation-4 bg-green-800">
+
+    
+            <a href="http://proyecto.test"
+            class="brand-link bg-green-800"
+    >
+
+    
+    <img src="http://proyecto.test/vendor/adminlte/dist/img/logo.png"
+         alt="Centro Cristiano Logo"
+         class="brand-image img-circle elevation-3"
+         style="opacity:.8">
+
+    
+    <span class="brand-text font-weight-light ">
+        Renuevo de Margarita
+    </span>
+
+</a>
+    
+    
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column "
+                data-widget="treeview" role="menu"
+                                >
+                
+                <li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin"        >
+
+        <i class="fas fa-tachometer-alt fa-fw "></i>
+
+        <p>
+            Administración
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/users"        >
+
+        <i class="fas fa-users fa-fw "></i>
+
+        <p>
+            Usuarios
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/categories"        >
+
+        <i class="fab fa-fw fa-buffer "></i>
+
+        <p>
+            Categorías
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/tags"        >
+
+        <i class="far fa-fw fa-bookmark "></i>
+
+        <p>
+            Etiquetas
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-header ">
+
+    OPCIONES DE CONTENIDO
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/posts"        >
+
+        <i class="fas fa-fw fa-clipboard "></i>
+
+        <p>
+            Lista de Posts
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/posts/create"        >
+
+        <i class="fas fa-fw fa-file "></i>
+
+        <p>
+            Crear nuevo Post
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-header ">
+
+    OPCIONES DE GRUPOS BÍBLICOS
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/groups"        >
+
+        <i class="fas fa-fw fa-clipboard "></i>
+
+        <p>
+            Lista de Grupos Bíblicos
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/groups/create"        >
+
+        <i class="fas fa-fw fa-file "></i>
+
+        <p>
+            Crear nuevo Grupo Bíblico
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-header ">
+
+    REPORTES DE GRUPOS BÍBLICOS
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/reports"        >
+
+        <i class="fas fa-fw fa-clipboard "></i>
+
+        <p>
+            Lista de Reportes de Grupos Bíblicos
+
+                    </p>
+
+    </a>
+
+</li>
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://proyecto.test/admin/reports/create"        >
+
+        <i class="fas fa-fw fa-file "></i>
+
+        <p>
+            Crear nuevo Reporte
+
+                    </p>
+
+    </a>
+
+</li>
+            </ul>
+        </nav>
+    </div>
+
+</aside>
+        
+        
+        <div class="content-wrapper ">
+
+            
+            <div class="content-header">
+                <div class="container-fluid">
+                        <h1>Reporte semanal</h1>
+                </div>
+            </div>
+
+            
+            <div class="content">
+                <div class="container-fluid">
+                    
+    
+<div class="card">
+    <div class="card-body">
+        <form method="POST" action="http://proyecto.test/admin/reports" accept-charset="UTF-8"><input name="_method" type="hidden" value="PUT"><input name="_token" type="hidden" value="zW9CSuDCS7cMDZLx4aJYKi8TuCUIO6xiJSboHSl2">
+
+        <div class="form-group">
+            <label for="felipes">Felipes:</label>
+            <input class="form-control" placeholder="Ingrese el número de Felipes." name="felipes" type="text" value="15" id="felipes">
+        
+        
+                    </div>  
+        
+        <div class="form-group">
+            <label for="discipulos">Disc&iacute;pulos:</label>
+            <input class="form-control" placeholder="Ingrese el número de Discípulos." name="discipulos" type="text" value="19" id="discipulos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="ninos">Ni&ntilde;os:</label>
+            <input class="form-control" placeholder="Ingrese el número de Niños." name="ninos" type="text" value="19" id="ninos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="ausentes">Ausentes:</label>
+            <input class="form-control" placeholder="Ingrese el número de Ausentes." name="ausentes" type="text" value="15" id="ausentes">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="amigos">Amigos:</label>
+            <input class="form-control" placeholder="Ingrese el número de Amigos." name="amigos" type="text" value="18" id="amigos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="ofrenda">Ofrenda:</label>
+            <input class="form-control" placeholder="Ingrese la Ofrenda." name="ofrenda" type="text" value="17" id="ofrenda">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="ofrenda_ninos">Ofrenda de ni&ntilde;os:</label>
+            <input class="form-control" placeholder="Ingrese la Ofrenda de niños." name="ofrenda_ninos" type="text" id="ofrenda_ninos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="vea">VEA:</label>
+            <input class="form-control" placeholder="Asistencia al VEA." name="vea" type="text" value="15" id="vea">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="convertidos_adultos">Convertidos (Adultos):</label>
+            <input class="form-control" placeholder="Ingrese el número de Convertidos (Adultos)." name="convertidos_adultos" type="text" value="16" id="convertidos_adultos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="convertidos_ninos">Convertidos (Ni&ntilde;os):</label>
+            <input class="form-control" placeholder="Ingrese el número de Convertidos (Niños)." name="convertidos_ninos" type="text" value="16" id="convertidos_ninos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="reconciliaciones">Reconciliaciones:</label>
+            <input class="form-control" placeholder="Ingrese el número de Reconciliaciones." name="reconciliaciones" type="text" value="17" id="reconciliaciones">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="liderazgo">Liderazgo:</label>
+            <input class="form-control" placeholder="Ingrese el número de personas en Clases de Liderazgo." name="liderazgo" type="text" value="19" id="liderazgo">
+        
+                    </div>
+        
+        
+        
+        <h4 class=" text-gray-500">Asistencia del día domingo</h4>
+        
+        <div class="form-group">
+            <label for="domingo_hermanos">Hermanos:</label>
+            <input class="form-control" placeholder="Ingrese el número de Hermanos que asistieron el día domingo." name="domingo_hermanos" type="text" value="19" id="domingo_hermanos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="domingo_amigos">Amigos:</label>
+            <input class="form-control" placeholder="Ingrese el número de Amigos que asistieron el día domingo." name="domingo_amigos" type="text" value="57" id="domingo_amigos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="domingo_ninos">Ni&ntilde;os:</label>
+            <input class="form-control" placeholder="Ingrese el número de Niños que asistieron el día domingo." name="domingo_ninos" type="text" value="13" id="domingo_ninos">
+        
+                    </div>
+        
+        
+        
+        <h4 class=" text-gray-500">Misión Amigo</h4>
+        
+        <div class="form-group">
+            <label for="mision_amigo">Misi&oacute;n Amigo:</label>
+            <input class="form-control" placeholder="Ingrese el número de personas incluidas en la Misión Amigo." name="mision_amigo" type="text" value="17" id="mision_amigo">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="consolidacion">Consolidaci&oacute;n:</label>
+            <input class="form-control" placeholder="Ingrese el número de personas que reciben la Consolidación." name="consolidacion" type="text" value="18" id="consolidacion">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="discipulado_uno">Discipulado 1:</label>
+            <input class="form-control" placeholder="Ingrese el número de personas que asisten al Discipulado 1." name="discipulado_uno" type="text" value="18" id="discipulado_uno">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="discipulado_dos">Discipulado 2:</label>
+            <input class="form-control" placeholder="Ingrese el número de personas que asisten al Discipulado 2." name="discipulado_dos" type="text" value="18" id="discipulado_dos">
+        
+                    </div>
+        
+        <div class="form-group">
+            <label for="liderazgo">Liderazgo:</label>
+            <input class="form-control" placeholder="Ingrese el número de personas en Clases de Liderazgo." name="liderazgo" type="text" value="19" id="liderazgo">
+        
+                    </div>
+        
+        
+        
+        
+        
+                
+        <a href="http://proyecto.test/admin/download-pdf" class="btn btn-success float-right ml-2">Generar PDF</a>
+        <a href="http://proyecto.test/admin/reports/make-excel" class="btn btn-success float-right">Generar Excel</a>
+
+            
+
+        </form>
+    </div>
+</div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        
+        
+        
+    </div>
+
+    
+            <script src="http://proyecto.test/vendor/jquery/jquery.min.js"></script>
+        <script src="http://proyecto.test/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="http://proyecto.test/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+        
+        
+        <script src="http://proyecto.test/vendor/adminlte/dist/js/adminlte.min.js"></script>
+    
+    
+                        <!-- Livewire Scripts -->
+
+<script src="/livewire/livewire.js?id=936e5d0fb0b76b631ba7" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+        console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+    }
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'zW9CSuDCS7cMDZLx4aJYKi8TuCUIO6xiJSboHSl2';
+
+    /* Make sure Livewire loads first. */
+    if (window.Alpine) {
+        /* Defer showing the warning so it doesn't get buried under downstream errors. */
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function() {
+                console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\n\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+            })
+        });
+    }
+
+    /* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+            
+    
+            
+</body>
+
+</html>

@@ -3,17 +3,19 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Crear un posts</h1>
+    <h1 class="text-center">Crear una publicación</h1>
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            {!! Form::open(['route' => 'admin.posts.store', 'autocomplete' => 'off', 'files'=> true]) !!}
+    <div class="img-fluid" style="background-image: url({{Storage::url('fondo3.jpg')}}); background-size:contain; background-repeat:repeat-y;">
+        <div class="card w-50 mx-auto" >
+            <div class="card-body">
+                {!! Form::open(['route' => 'admin.posts.store', 'autocomplete' => 'off', 'files'=> true]) !!}
 
-                @include('admin.posts.partials.form')
-                {!! Form::submit('Crear Post', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}
+                    @include('admin.posts.partials.form')
+                    {!! Form::submit('Crear Post', ['class' => 'btn btn-success float-right']) !!}
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
 @stop
@@ -73,5 +75,6 @@
 
             reader.readAsDataURL(file);
         }
+
     </script>
 @endsection

@@ -1,10 +1,10 @@
 <x-jet-form-section submit="updatePassword">
     <x-slot name="title">
-        Actualizar contraseña
+        <p class="text-black">Actualizar contraseña</p>
     </x-slot>
 
     <x-slot name="description">
-        Establece una nueva contraseña.
+        <p class="text-gray-700">Establece una nueva contraseña.</p>
     </x-slot>
 
     <x-slot name="form">

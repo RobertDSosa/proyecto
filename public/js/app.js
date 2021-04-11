@@ -3791,6 +3791,11 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+// import { Calendar } from '@fullcalendar/core';
+// import esLocale from '@fullcalendar/core/locales/es';
+// let calendar = new Calendar(calendarEl, {
+//   locale: esLocale
+// });
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");

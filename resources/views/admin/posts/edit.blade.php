@@ -3,7 +3,7 @@
 @section('title', 'Panel administrativo')
 
 @section('content_header')
-    <h1>Editar Posts</h1>
+    <h1 class="text-center">Editar Posts</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,9 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="card">
+    <div class="img-fluid" style="height:2200px; background-image: url({{Storage::url('fondo3.jpg')}}); background-size:contain; background-repeat:repeat-y;">
+
+    <div class="card w-50 mx-auto">
         <div class="card-body">
             {!! Form::model($post, ['route' => ['admin.posts.update',$post], 'autocomplete' => 'off', 'files'=> true, 'method' => 'put']) !!}
             
@@ -22,6 +24,7 @@
                 {!! Form::submit('Actualizar Post', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
+    </div>
     </div>
 @stop
 
